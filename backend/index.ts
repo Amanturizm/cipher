@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import encodeRouter from "./Routers/encode";
 import decodeRouter from "./Routers/decode";
 
 const app = express();
 const port = 8000;
 
+app.use(cors());
 app.use(express.json());
 app.use('/encode', encodeRouter);
 app.use('/decode', decodeRouter);
